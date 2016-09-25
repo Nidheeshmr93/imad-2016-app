@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var articleOne = {
   title:'Article-One | Nidheesh',
-  haeding:'Article One',
+  heading:'Article One',
   date: 'Sep 20, 2016',
   content:`<p>
                  In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
