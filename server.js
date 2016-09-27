@@ -5,11 +5,12 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-  title:'Article-One | Nidheesh',
-  heading:'Article One',
-  date: 'Sep 20, 2016',
-  content:`<p>
+var articles = {
+     articleOne : {
+     title:'Article-One | Nidheesh',
+     heading:'Article One',
+     date: 'Sep 20, 2016',
+     content:`<p>
                  In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
             </p>
             <p>
@@ -18,7 +19,38 @@ var articleOne = {
             <p>
                 In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
             </p>`
+        },
+     articleTwo : {
+          title:'Article-Two | Nidheesh',
+        heading:'Article Two',
+        date: 'Sep 27, 2016',
+        content:`<p>
+                 In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
+            </p>
+            <p>
+                In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
+            </p>
+            <p>
+                In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
+            </p>`
+     },
+     articleThree : {
+          title:'Article-three | Nidheesh',
+          heading:'Article Three',
+          date: 'Sep 27, 2016',
+          content:`<p>
+                 In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
+            </p>
+            <p>
+                In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
+            </p>
+            <p>
+                In many languages, articles are a special part of speech, which cannot easily be combined with other parts of speech. In English, articles are frequently considered a part of a broader speech category called determiners, which combines articles and demonstratives (such as "this" and "that").
+            </p>`
+     }
+        
 };
+
 function createTemplate (data) {
 var title = data.title;
 var date = data.date;
@@ -60,17 +92,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one' , function (req,res) {
- res.send(createTemplate(articleOne));
+app.get('/:articleName' , function (req,res) {
+    //articleName ==article-one
+    //articles[articleName] == {} content object for article one
+var articleName = req.params.articleName;
+ res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two' , function (req,res) {
- res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three' , function (req,res) {
- res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
