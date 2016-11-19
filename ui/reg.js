@@ -16,7 +16,7 @@ function loadRegForm () {
 		</tr>
 		<tr>
 		<td> Confirm Password </td>
-        <td> <input type="password" id="cpassword" name="cpassword" required <span id="error">  </span> /> /> </td>
+        <td> <input type="password" id="cpassword" name="cpassword" required <span id="error">  </span>  /> </td>
 		</tr> 
         <tr>
 		<td> </td>
