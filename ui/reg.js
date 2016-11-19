@@ -16,12 +16,13 @@ function loadRegForm () {
 		</tr>
 		<tr>
 		<td> Confirm Password </td>
-        <td> <input type="password" id="cpassword" name="cpassword" required <span id="error"> required </span> /> 
+        <td> <input type="password" id="cpassword" name="cpassword" required <span id="error"> required </span> /> </td>
 		</tr> 
         <tr>
 		<td> </td>
         <td> <input type="submit" id="register_btn" value="Register"  /> </td>
-		</tr> `
+		</tr> 
+		</table>`
         ;
     document.getElementById('reg_area').innerHTML = RegHtml;
     
