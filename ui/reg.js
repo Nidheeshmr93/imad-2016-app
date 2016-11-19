@@ -80,7 +80,11 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
 				window.location="/";
-            } 
+            }
+		else
+		{
+	          loadRegForm();
+		}
         }
     };
     
@@ -92,4 +96,4 @@ function loadLogin () {
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 
-loadRegForm();
+
