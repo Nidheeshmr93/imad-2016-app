@@ -198,8 +198,8 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
-app.get('/create-post', function (req, res) {
-	 var title = req.body.title;
+app.post('/create-post', function (req, res) {
+     var title = req.body.title;
      var heading = req.body.heading;
      var date = req.body.date;
      var content = req.body.content;
