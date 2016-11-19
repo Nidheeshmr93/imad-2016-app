@@ -1,6 +1,6 @@
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
+        <h3>User Login</h3>
         <table>
            <tr>
                <td>Username</td>
