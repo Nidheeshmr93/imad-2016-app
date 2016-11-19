@@ -38,6 +38,7 @@ function loadRegForm () {
               if (request.status === 200) {
                   alert('User created successfully');
                   register.value = 'Registered!';
+		   window.location="/login";
               } else {
                   alert('Could not register the user');
                   register.value = 'Register';
