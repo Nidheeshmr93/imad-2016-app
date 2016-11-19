@@ -16,7 +16,7 @@ function loadLogin () {
             }
             else
 			{
-				window.location="/ui/login.html";
+				window.location="/login";
 			}				
         }
     };
