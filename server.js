@@ -84,6 +84,19 @@ app.get('/hash/:input', function(req, res) {
    res.send(hashedString);
 });
 
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+});
+
+app.get('/reg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'reg.html'));
+});
+
+app.get('/article', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.html'));
+});
+
+
 app.post('/create-user', function (req, res) {
    // username, password
    // {"username": "tanmai", "password": "password"}
