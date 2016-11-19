@@ -7,26 +7,8 @@ function loadLoggedInUser (username) {
 }
 
 function loadLogin () {
-    // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-				loadadmincheck();
-            }
-            else
-			{
-				window.location="/login";
-			}				
-        }
-    };
-    
-    request.open('GET', '/check-login', true);
-    request.send(null);
-}
-function loadadmincheck()
-{
-var request = new XMLHttpRequest();
+    // Check if the admin is already logged in
+   var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
@@ -43,7 +25,8 @@ var request = new XMLHttpRequest();
     request.send(null);
 
 }
-ffunction loadpostarea()
+
+function loadpostarea()
 {
 	var PostHtml = 
         `<h3>Registration</h3>
