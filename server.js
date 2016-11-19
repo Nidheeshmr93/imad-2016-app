@@ -92,6 +92,10 @@ app.get('/reg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'reg.html'));
 });
 
+app.get('/insertpost', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'insertpost.html'));
+});
+
 app.get('/article', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article.html'));
 });
