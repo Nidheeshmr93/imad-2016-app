@@ -50,7 +50,7 @@ function loadRegForm () {
 		var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 		var cpassword = document.getElementById('cpassword').value;
-		if(password==cpassword)
+		if(password!=cpassword)
 		{
 			var error= "Password is not matched";
 			document.getElementById('error').innerHTML=error;
