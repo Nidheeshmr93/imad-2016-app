@@ -148,6 +148,7 @@ app.get('/check-login', function (req, res) {
        res.status(400).send('You are not logged in');
    }
 });
+
 app.get('/check-adlogin', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
        // Load the user object
@@ -159,15 +160,19 @@ app.get('/check-adlogin', function (req, res) {
 			  if(urname=="nidheesh32")
 			  {
                res.send(result.rows[0].username);    
-           }
+               }
 		   else
 		   {
 			   window.location="/";
 		   }
-       });
-   } else {
+       }
+	  
+    });
+   }
+   else {
        res.status(400).send('You are not logged in');
    }
+
 });
 
 
