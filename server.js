@@ -174,7 +174,7 @@ app.get('/check-adlogin', function (req, res) {
               res.status(500).send(err.toString());
            } else {
 			  var urname=result.rows[0].username;
-			  if(urname=="nidheesh93")
+			  if(urname=="nidheeshmr93")
 			  {
                res.send(result.rows[0].username);    
                }
