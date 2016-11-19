@@ -1,28 +1,28 @@
 function loadRegForm () {
     var RegHtml = 
         `<h3>Registration</h3>
-		<table>
+	  <table>
 		<tr>
-		<td>User Name </td>
-        <td> <input type="text" id="username" placeholder="username" required/> </td>
+			<td>User Name </td>
+        		<td> <input type="text" id="username" placeholder="Username" required/> </td>
 		</tr>
 		<tr>
-		<td> Email </td>
-		<td> <input type="email" id="email" required /> </td>
+			<td> Email </td>
+			<td> <input type="email" id="email" placeholder="Email" required /> </td>
 		</tr>
 		<tr>
-		<td> Password</td>
-        <td> <input type="password" id="password" name="password" required /> </td> 
+			<td> Password</td>
+        	<td> <input type="password" id="password" name="password" placeholder="Password" required /> </td> 
 		</tr>
 		<tr>
-		<td> Confirm Password </td>
-        <td> <input type="password" id="cpassword" name="cpassword" required  /> <span id="error">  </span> </td>
+			<td> Confirm Password </td>
+        		<td> <input type="password" id="cpassword" name="cpassword" placeholder=Confirm "Password" required  /> <span id="error">  </span> </td>
 		</tr> 
-        <tr>
-		<td> </td>
-        <td> <input type="submit" id="register_btn" value="Register"  /> </td>
+        	<tr>
+			<td> </td>
+        		<td> <input type="submit" id="register_btn" value="Register"  /> </td>
 		</tr> 
-		</table>`
+	  </table>`
         ;
     document.getElementById('reg_area').innerHTML = RegHtml;
     
