@@ -29,40 +29,108 @@ function createTemplate (data) {
     var content = data.content;
     
     var htmlTemplate = `
-    <html>
-      <head>
-          <title>
-              ${title}
-          </title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link href="/ui/style.css" rel="stylesheet" />
-      </head> 
-      <body>
-          <div class="container">
+    <!doctype html>
+<html>
+<head>
+<title>
+ ${title}
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/ui/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/ui/coin-slider.css" />
+<script type="text/javascript" src="/ui/cufon-yui.js"></script>
+<script type="text/javascript" src="/ui/cufon-titillium-250.js"></script>
+<script type="text/javascript" src="/ui/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/ui/script.js"></script>
+<script type="text/javascript" src="/ui/coin-slider.min.js"></script>
+    </head>
+    <body>
+        <div class="main">
+		    <div class="header">
+		    <div class="header_resize">
+      <div class="logo">
+        <h1><a href="/" id="logo">Nidheesh's <span>Blog</span> <small>It's Personal</small></a></h1>
+      </div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="/"><span>Home Page</span></a></li>
+          <li class="active"><a href="/article"><span>My Articles</span></a></li>
+          <li><a href="/videos"><span>My Favourite Videos</span></a></li>
+          <li><a href="/contact"><span>Contact Me</span></a></li>
+        </ul>
+      </div>
+	  <div class="clr"></div>
+      <div class="slider">
+        <div id="coin-slider"><a href="#"><img src="/ui/slide1.jpg" width="935" height="307" alt="" /></a> <a href="#"><img src="/ui/slide2.jpg" width="935" height="307" alt="" /></a> <a href="#"><img src="/ui/slide3.jpg" width="935" height="307" alt="" /></a></div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+    <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>${heading}</h2>
+          <p class="infopost"> ${date.toDateString()}</p>
+          <div class="clr"></div>
+          <div class="post_content">
+            <div id="articles">
               <div>
-                  <a href="/">Home</a>
+                <p style="font-size:18px;text-align:justify; text-indent: 50px; line-height: 1.8;"> ${content} </p>
               </div>
               <hr/>
-              <h3>
-                  ${heading}
-              </h3>
-              <div>
-                  ${date.toDateString()}
-              </div>
-              <div>
-                ${content}
-              </div>
-              <hr/>
-              <h4>Comments</h4>
+              <h2>Comments</h2>
               <div id="comment_form">
               </div>
               <div id="comments">
                 <center>Loading comments...</center>
               </div>
+            </div>
+			<hr/>
           </div>
-          <script type="text/javascript" src="/ui/article.js"></script>
-      </body>
-    </html>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="clr"></div>
+        <div class="g1">
+          <div class="g2">
+            <div class="gadget">
+              <h2 class="star"><span>Sidebar</span> Menu</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+			    <li><p id="login_area"> <a href="/login">Login</a>  </p>
+				</br>
+				</br>
+                <li><a href="/">Home</a></li>
+                <li><a href="/article">My Articles</a></li>
+                <li><a href="/videos">My Favourite Videos</a></li>
+                <li><a href="/contact">Contact Me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+      <div>     
+         
+      </div>	   
+    <div class="footer">
+     <div class="footer_resize">
+	   <p id="rl"> If you are a new user then  <a href="/reg">register now</a>.&nbsp Or &nbsp please  <a href="/login">login</a> to comment my articles.</p>
+       <p class="lf">&copy; Copyright Nidheesh's.</p>
+       <p class="rf">Design by Nidheesh</p>
+
+       <div style="clear:both;"></div> 
+     </div>
+   </div>
+</div>           
+<script type="text/javascript" src="/ui/article.js"></script>
+</body>
+</html>
     `;
     return htmlTemplate;
 }
@@ -93,6 +161,7 @@ app.get('/reg', function (req, res) {
 });
 
 app.get('/insertpost', function (req, res) {
+	//only admin can access this page. here the admin is usernamed 'nidheeshmr93' 
   res.sendFile(path.join(__dirname, 'ui', 'insertpost.html'));
 });
 
@@ -100,10 +169,17 @@ app.get('/article', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article.html'));
 });
 
+app.get('/videos', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'videos.html'));
+});
+
+app.get('/contact', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
+});
 
 app.post('/create-user', function (req, res) {
    // username, password
-   // {"username": "tanmai", "password": "password"}
+   // {"username": "Nidheesh", "password": "password"}
    // JSON
    var username = req.body.username;
    var email = req.body.email;
@@ -167,6 +243,7 @@ app.get('/check-login', function (req, res) {
 });
 
 app.get('/check-adlogin', function (req, res) {
+	//it's used to check whether the user is admin or not
    if (req.session && req.session.auth && req.session.auth.userId) {
        // Load the user object
        pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
@@ -176,12 +253,9 @@ app.get('/check-adlogin', function (req, res) {
 			  var urname=result.rows[0].username;
 			  if(urname=="nidheeshmr93")
 			  {
+			   //nidheeshmr93 is the admin's user name 
                res.send(result.rows[0].username);    
                }
-		   else
-		   {
-			   window.location="/";
-		   }
        }
 	  
     });
@@ -195,7 +269,7 @@ app.get('/check-adlogin', function (req, res) {
 
 app.get('/logout', function (req, res) {
    delete req.session.auth;
-   res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
+   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
 
 app.post('/create-post', function (req, res) {
