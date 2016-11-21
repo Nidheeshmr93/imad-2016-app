@@ -29,7 +29,7 @@ function loadLogin () {
 function loadpostarea()
 {
 	var PostHtml = 
-        `<h3>Registration</h3>
+        `
 		<table>
 		<tr>
 		<td>Title</td>
@@ -41,11 +41,11 @@ function loadpostarea()
 		</tr>
 		<tr>
 		<td>Date</td>
-        <td> <input type="date" id="date" name="Date" required /> </td> 
+        <td> <input type="date" id="date" placeholder="yyyy-mm-dd" required /> </td> 
 		</tr>
 		<tr>
 		<td> Content</td>
-        <td> <textarea id="content"   required > </textarea>  
+        <td> <textarea id="content"  rows="12" cols="50" required > </textarea>  
 		</tr> 
         <tr>
 		<td> </td>
@@ -66,14 +66,14 @@ function loadpostarea()
               if (request.status === 200) {
                   alert('content posted successfully');
                   post.value = 'Posted!';
+				  window.location="/article"
               } else {
                   alert('Could not Post the Content');
                   post.value = 'Post';
               }
           }
         };
-		// i changed right here
-        
+		       
         // Make the request
         var title = document.getElementById('title').value;
 		var heading = document.getElementById('heading').value;
