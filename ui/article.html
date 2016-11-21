@@ -1,18 +1,92 @@
 <!doctype html>
 <html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
+<head>
+<title>My Blog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/ui/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/ui/coin-slider.css" />
+<script type="text/javascript" src="/ui/cufon-yui.js"></script>
+<script type="text/javascript" src="/ui/cufon-titillium-250.js"></script>
+<script type="text/javascript" src="/ui/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/ui/script.js"></script>
+<script type="text/javascript" src="/ui/coin-slider.min.js"></script>
     </head>
     <body>
-           <div id="login_area">
-                 <p> To login <span> <a href="/login">click here</a> </span> </p>
-         </div>
-           <h3>My Articles</h3>
+        <div class="main">
+		    <div class="header">
+		    <div class="header_resize">
+      <div class="logo">
+        <h1><a href="/" id="logo">Nidheesh's <span>Blog</span> <small>It's Personal</small></a></h1>
+      </div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="/"><span>Home Page</span></a></li>
+          <li class="active"><a href="/article"><span>My Articles</span></a></li>
+          <li><a href="/videos"><span>My Favourite Videos</span></a></li>
+          <li><a href="/contact"><span>Contact Me</span></a></li>
+        </ul>
+      </div>
+	  <div class="clr"></div>
+      <div class="slider">
+        <div id="coin-slider"><a href="#"><img src="/ui/slide1.jpg" width="935" height="307" alt="" /></a> <a href="#"><img src="/ui/slide2.jpg" width="935" height="307" alt="" /></a> <a href="#"><img src="/ui/slide3.jpg" width="935" height="307" alt="" /></a></div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+    <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>My Articles</h2>
+          <p class="infopost"></p>
+          <div class="clr"></div>
+          <div class="post_content">
             <div id="articles">
                 <center>Loading articles...</center>
             </div>
-<div class="footer">
- </div>
+			<hr/>
+			    <p id="inpost"> </p>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="clr"></div>
+        <div class="g1">
+          <div class="g2">
+            <div class="gadget">
+              <h2 class="star"><span>Sidebar</span> Menu</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+			    <li><p id="login_area"> <a href="/login">Login</a>  </p>
+				</br>
+				</br>
+                <li><a href="/">Home</a></li>
+                <li><a href="/article">My Articles</a></li>
+                <li><a href="/videos">My Favourite Videos</a></li>
+                <li><a href="/contact">Contact Me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+      <div>     
+         
+      </div>	   
+    <div class="footer">
+     <div class="footer_resize">
+	   <p id="rl"> If you are a new user then  <a href="/reg">register now</a>.&nbsp Or &nbsp please  <a href="/login">login</a> to comment my articles.</p>
+       <p class="lf">&copy; Copyright Nidheesh's.</p>
+       <p class="rf">Design by Nidheesh</p>
+
+       <div style="clear:both;"></div> 
+     </div>
+   </div>
+</div>           
 <script type="text/javascript" src="/ui/myarticle.js">
         </script>
 </body>
