@@ -1,6 +1,7 @@
 function loadRegForm () {
     var RegHtml = 
-        `<h3>Registration</h3>
+        `
+	  <form>
 	  <table>
 		<tr>
 			<td>User Name </td>
@@ -16,13 +17,15 @@ function loadRegForm () {
 		</tr>
 		<tr>
 			<td> Confirm Password </td>
-        		<td> <input type="password" id="cpassword" name="cpassword" placeholder=Confirm "Password" required  /> <span id="error">  </span> </td>
+        		<td> <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" required  /> <span id="error">  </span> </td>
 		</tr> 
         	<tr>
 			<td> </td>
         		<td> <input type="submit" id="register_btn" value="Register"  /> </td>
 		</tr> 
-	  </table>`
+	  </table>
+	  </form>
+	  `
         ;
     document.getElementById('reg_area').innerHTML = RegHtml;
     
