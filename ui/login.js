@@ -1,7 +1,7 @@
 function loadLoginForm () {
     var loginHtml = `
-        <h3>User Login</h3>
         <table>
+		 <form>
            <tr>
                <td>Username</td>
                <td> <input type="text" id="username" placeholder="Username" /> </td>
@@ -14,6 +14,7 @@ function loadLoginForm () {
               <td> </td>
               <td> <input type="submit" id="login_btn" value="Login" /> </td>
            </tr>
+		   </form>
          </table>
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
