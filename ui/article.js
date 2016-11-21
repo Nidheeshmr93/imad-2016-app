@@ -49,12 +49,20 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
+                loadLoggedInUser(this.responseText);
             }
         }
     };
     
     request.open('GET', '/check-login', true);
     request.send(null);
+}
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
 }
 
 function escapeHTML (text)
